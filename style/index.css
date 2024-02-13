@@ -10,15 +10,21 @@
 
 #choose {
 
-    
+    height: 500px;
 }
 
 #allAnimal {
 
     background-color: #6aa74a;
+    width: 30%;
+    height: 50%;
+
 }
 
 #allEnclos {
 
     background-color: #BF693B;
+    width: 30%;
+    height: 50%;
+
 }

@@ -28,12 +28,13 @@
     <section id="choose" class="d-flex justify-content-around mt-5">
         
         <div id="allEnclos" class="">
-            <h1 class="text-black">salut</h1>
+            <h1 class="text-black">Enclos</h1>
+            <button type="button" class="btn btn-outline-light"><a href="./pages/enclos.php">Enclos</a></button>
         </div>
-        
+
         <div id="allAnimal" class="">
-            <h1 class="text-black">salut</h1>
-        
+            <h1 class="text-black">Animaux</h1>
+            <button type="button" class="btn btn-outline-light"> <a href="./pages/animaux.php">Animaux</a></button>        
         </div>
         
 
