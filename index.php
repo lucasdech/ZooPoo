@@ -1,6 +1,8 @@
-<?php 
-
+<?php
+require_once "./setting/db.php";
+require_once "./setting/autoLoader.php";
 ?>
+
 
     <!-- DEBUT include la NavBar -->
     
@@ -29,20 +31,18 @@
         
         <div id="allEnclos" class="">
             <h1 class="text-black">Enclos</h1>
-            <button type="button" class="btn btn-outline-light"><a href="./pages/enclos.php">Enclos</a></button>
+            <button type="button" class="btn btn-outline-light"><a href="./pages/GestionEnclos.php">Enclos</a></button>
         </div>
 
         <div id="allAnimal" class="">
             <h1 class="text-black">Animaux</h1>
-            <button type="button" class="btn btn-outline-light"> <a href="./pages/animaux.php">Animaux</a></button>        
+            <button type="button" class="btn btn-outline-light"> <a href="./pages/GestionAnimaux.php">Animaux</a></button>        
         </div>
         
 
     </section>
 
     <!-- FIN section navigation dans le site avec animaux ou enclos -->
-
-
 
     
 

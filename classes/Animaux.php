@@ -10,17 +10,28 @@ class Animaux {
     private int $poids;
     private bool $malade = 0;
     private int $enclos;
+    private array $animals = [];
 
-    public function __construct(int $id, string $name, string $espece, int $faim, int $fatigue, int $poids, int $enclos)
+    public function __construct(array $animals)
     {
-        $this->id = $id;
-        $this->name = $name;
-        $this->espece = $espece;
-        $this->faim = $faim;
-        $this->fatigue = $fatigue;
-        $this->poids = $poids ;
-        $this->enclos = $enclos;
+        $this->hydrate($animals);
     }
+
+       // setter 
+    // essaie de la fonction hydrater
+    
+    public function hydrate(array $animals)
+    {
+        foreach ($animals as $key => $value) {
+            $method = 'set' . $key;
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+        return $method;
+    }
+
+
 
     public function info()
     {
@@ -70,18 +81,11 @@ class Animaux {
         return $this->enclos;
     }
 
-
-    // setter 
-    // essaie de la fonction hydrater
-    
-    public function hydrate($variable)
+    public function addAnimals(Animaux $animals, $method)
     {
-        foreach ($variable as $key) {
-            $methid = 'set' . $key;
-        }
+       array_push($this->animals, $method);
     }
 
-
-    
-
 }
+
+
