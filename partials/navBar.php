@@ -10,7 +10,7 @@
 </head>
 <body>
     
-  <nav id="navbar" class="navbar navbar-dark bg-dark fixed-top">
+  <nav id="navbar" class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Zoo</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
