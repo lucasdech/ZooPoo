@@ -12,7 +12,7 @@
     
   <nav id="navbar" class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Zoo</a>
+      <a class="navbar-brand" href="../index.php">Zoo</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -46,3 +46,4 @@
   </nav>
 
 
+<?php include __DIR__ . '/../setting/messages.php' ?>

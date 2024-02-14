@@ -8,22 +8,23 @@ class Animaux {
     private int $faim;
     private int $fatigue;
     private int $poids;
-    private bool $malade = 0;
-    private int $enclos;
-    private array $animals = [];
+    private int $taille;
+    private bool $malade = false;
+    private $enclos;
+
+    // methode construct avec le hydrate
 
     public function __construct(array $animals)
     {
         $this->hydrate($animals);
     }
 
-       // setter 
-    // essaie de la fonction hydrater
+    // essaie de la methode hydrater
     
     public function hydrate(array $animals)
     {
         foreach ($animals as $key => $value) {
-            $method = 'set' . $key;
+            $method = 'set' . str_replace(' ', '', ucwords(str_replace('_', ' ', $key)));
             if (method_exists($this, $method)) {
                 $this->$method($value);
             }
@@ -33,10 +34,10 @@ class Animaux {
 
 
 
-    public function info()
-    {
-        echo $this->name . " " . $this->espece . " " . $this->faim . " " . $this->fatigue . " " . $this->poids. " " . $this->enclos;
-    }
+    // public function info()
+    // {
+    //     echo $this->name . " " . $this->espece . " " . $this->faim . " " . $this->fatigue . " " . $this->poids. " " . $this->taille . " " . $this->enclos;
+    // }
 
 
     // getter
@@ -56,6 +57,11 @@ class Animaux {
         return $this->espece;
     }
 
+    public function getTaille()
+    {
+        return $this->taille;
+    }
+
     public function getFaim()
     {
         return $this->faim;
@@ -73,7 +79,7 @@ class Animaux {
 
     public function getMalade()
     {
-        return $this->malade;
+        return intval($this->malade);
     }
 
     public function getEnclos()
@@ -81,10 +87,55 @@ class Animaux {
         return $this->enclos;
     }
 
-    public function addAnimals(Animaux $animals, $method)
+
+    // setter
+
+    public function setId($id)
     {
-       array_push($this->animals, $method);
+        $this->id = $id;
     }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function setEspece($espece)
+    {
+        $this->espece = $espece;
+    }
+
+    public function setTaille($taille)
+    {
+        $this->taille = $taille;
+    }
+
+    public function setFaim($faim)
+    {
+        $this->faim = $faim;
+    }
+
+    public function setFatigue($fatigue)
+    {
+        $this->fatigue  =$fatigue;
+    }
+
+    public function setPoids($poids)
+    {
+        $this->poids = $poids;
+    }
+
+    public function setMalade($malade)
+    {
+        $this->malade = $malade;
+    }
+
+    public function setEnclos($enclos)
+    {
+        $this->enclos = $enclos;
+    }
+
+
 
 }
 
