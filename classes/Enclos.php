@@ -97,12 +97,18 @@ class Enclos {
 
     // autre méthodes 
 
-    // push les enclos dans le tableau d'enclos pour hydrate je pense // NON  
+    // push les animaux dans le tableau animaux des enclots 
 
     public function addAnimal(Animaux $animal)
     {
         array_push($this->animalArray, $animal);
+        $this->nbrAnimal++;
     }
 
+    public function countAnimals()
+    {
+       return count($this->animalArray);
+    }
+    
 
 }

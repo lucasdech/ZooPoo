@@ -10,7 +10,7 @@ class Animaux {
     private int $poids;
     private int $taille;
     private bool $malade = false;
-    private $enclos;
+    private $enclosId;
 
     // methode construct avec le hydrate
 
@@ -82,9 +82,9 @@ class Animaux {
         return intval($this->malade);
     }
 
-    public function getEnclos()
+    public function getEnclosId()
     {
-        return $this->enclos;
+        return $this->enclosId;
     }
 
 
@@ -130,9 +130,9 @@ class Animaux {
         $this->malade = $malade;
     }
 
-    public function setEnclos($enclos)
+    public function setEnclos($enclosId)
     {
-        $this->enclos = $enclos;
+        $this->enclosId = $enclosId;
     }
 
 

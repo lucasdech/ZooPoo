@@ -1,0 +1,15 @@
+.boite {
+
+    height: 75%;
+    width: 80%;
+}
+
+
+.imageFond {
+
+    height: 100%;
+    width: 100%;
+    border: 3px solid red;
+    background-size: cover;
+
+}

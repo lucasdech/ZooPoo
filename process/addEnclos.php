@@ -8,4 +8,4 @@ $enclos = new Enclos($_POST);
 $addEnclos->addEnclos($enclos);
 
 
-header("Location: ../pages/GestionEnclos.php?success=Animal bien ajouté !");
+header("Location: ../pages/GestionEnclos.php?success=Enclos bien ajouté !");

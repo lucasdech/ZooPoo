@@ -14,8 +14,26 @@ if ($choice) {
     $animals = $Newanimal->loadAll();
 }
 
-
 $enclos = $LoadEnclos->getAll();
+
+// test 
+
+
+// $animauxidenclos = $Newanimal->AnimalByEnclos($choice);
+
+
+// var_dump($choice);
+
+    // avoir tout les enclos existant pour le select
+
+// echo "<pre>";
+// var_dump($enclos);
+// echo "</pre>";
+
+
+// fin des test
+
+
 ?>
 
 <!-- Lien de ma feuille de style specifique a ma page --><link rel="stylesheet" href="../style/gestion_animaux_style.css">
@@ -93,11 +111,11 @@ $enclos = $LoadEnclos->getAll();
     
     <!-- sectionpour afficher la liste choisie avec le select -->
 
-    <section id="afficher_animaux" class="d-flex justify-content-center align-items-center">
+    <section id="afficher_animaux" class="d-flex justify-content-center align-items-center flex-column">
         <div class="row">
             <h2>liste des animaux</h2>
         </div>
-        <div class=" row test">
+        <div class="row test">
             <?php foreach ($animals as $key) { ?>
                 
                 <div class="card m-3" style="width: 18rem;">
@@ -111,7 +129,8 @@ $enclos = $LoadEnclos->getAll();
                         <li class="list-group-item"><?=$key->getFaim() . " faim"?></li>
                         <li class="list-group-item"><?=$key->getMalade() . " malade"?></li>
                         <li class="list-group-item"><?=$key->getFatigue() . " fatigué"?></li>
-                        <li class="list-group-item"><?="Enclos n° " . $key->getEnclos()?></li>
+                        <li class="list-group-item"><?=$key->getEspece()?></li>
+                        <li class="list-group-item"><?="Enclos n° " . $key->getEnclosId()?></li>
                     </ul>
                 </div>
                 

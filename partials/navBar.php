@@ -18,25 +18,22 @@
       </button>
       <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
         <div class="offcanvas-header bg-dark">
-          <h5 class="offcanvas-title text-white" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+          <h5 class="offcanvas-title text-white" id="offcanvasDarkNavbarLabel">Bienvenue au Zoo</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body bg-dark">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Menu</a>
+              <a class="nav-link active" aria-current="page" href="../index.php">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/GestionEnclos.php">les Enclos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/GestionAnimaux.php">les Animaux</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">les employés</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                les Enclos
-              </a>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Enclos 1</a></li>
-                <li><a class="dropdown-item" href="#">Enclos 2</a></li>
-              </ul>
             </li>
           </ul>
           

@@ -12,7 +12,7 @@
 
 #choose {
 
-    height: 500px;
+    height: 400px;
 }
 
 #allAnimal {
@@ -20,18 +20,24 @@
     background-color: #6aa74a;
     width: 30%;
     height: 50%;
-
 }
 
 #allEnclos {
 
-    background-color: #BF693B;
+    background-color: #6aa74a;
     width: 30%;
     height: 50%;
+}
 
+
+.employe{
+
+    color: white;
+    height: 150px;
+    width: 50%;
+    background-color: #BF693B;
 }
 
 
 /* FIN PARTIE INDEX  */
-
 

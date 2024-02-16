@@ -3,6 +3,8 @@
         background-image: url(../images/fondNoir&Blanc.png);
         width: 100%;
         height: 100px;
+        position: absolute;
+        top: 100vh;
     }
 </style>
 

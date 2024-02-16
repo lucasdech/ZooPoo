@@ -14,6 +14,16 @@ if ($choice) {
     $Enclos = $LoadEnclos->getAll();
 }
 
+// ci dessous pour faire le compte des enclos et ne pas depasser 5 
+// a refaire dans le enclosManager !
+
+$prepareSQl = $connexion->prepare("SELECT * FROM enclos");
+$prepareSQl->execute();
+$test = $prepareSQl->fetchAll(PDO::FETCH_ASSOC);
+
+$compter = count($test);
+
+var_dump($compter);
 
 ?>
 
@@ -77,22 +87,23 @@ if ($choice) {
      
      <!-- sectionpour afficher la liste choisie avec le select -->
  
-     <section id="afficher_animaux" class="d-flex justify-content-center align-items-center">
+     <section id="afficher_animaux" class="d-flex justify-content-center align-items-center flex-column">
          <div class="row">
              <h2>liste des Enclos</h2>
          </div>
          <div class="row">
              <?php foreach ($Enclos as $key) { ?>
                  
-                 <div class="card m-3" style="width: 18rem;">
-                     <div class="card-header">
+                 <div class="photoEnclos col-4" style="background-image: url(../images/<?=$key->getType()?>.jpeg);">
+                     <div class="EnclotName">
                          <?=$key->getName()?>
                      </div>
-                     <ul class="list-group list-group-flush">
-                         <li class="list-group-item"><?=$key->getType()?></li>
-                         <li class="list-group-item"><?=$key->getNbrAnimal() . " animaux a l'interieur"?></li>
-                         <li class="list-group-item"><?=$key->getIsClean() . " propre"?></li>
+                     <ul>
+                         <li class="texte-light fs-2"><?=$key->getType()?></li>
+                         <li class="texte-light fs-2"><?=$key->getNbrAnimal() . " animaux a l'interieur"?></li>
+                         <li class="texte-light fs-2"><?=$key->getIsClean() . " propre"?></li>
                      </ul>
+                     <a class="btn btn-danger" href="./detialEnclos.php?idEnclos=<?=$key->getId()?>">Voir en detail</a>
                  </div>
                  
              <?php }?>

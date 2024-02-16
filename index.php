@@ -1,6 +1,7 @@
 <?php
 require_once "./setting/db.php";
 require_once "./setting/autoLoader.php";
+
 ?>
 
 
@@ -29,22 +30,33 @@ require_once "./setting/autoLoader.php";
 
     <section id="choose" class="d-flex justify-content-around mt-5">
         
-        <div id="allEnclos" class="">
+        <div id="allEnclos" class="d-flex justify-content-center align-items-center">
             <h1 class="text-black">Enclos</h1>
-            <button type="button" class="btn btn-outline-light"><a href="./pages/GestionEnclos.php">Enclos</a></button>
+            <a class="btn btn-outline-light" href="./pages/GestionEnclos.php">Enclos</a>
         </div>
 
-        <div id="allAnimal" class="">
+        <div id="allAnimal" class="d-flex justify-content-center align-items-center">
             <h1 class="text-black">Animaux</h1>
-            <button type="button" class="btn btn-outline-light"> <a href="./pages/GestionAnimaux.php">Animaux</a></button>        
+            <a class="btn btn-outline-light" href="./pages/GestionAnimaux.php">Animaux</a></button>        
         </div>
         
-
     </section>
 
     <!-- FIN section navigation dans le site avec animaux ou enclos -->
 
-    
+
+
+    <!-- DEBUT section pour gerer les employée -->
+
+    <section class="d-flex justify-content-center">
+        <div class="employe d-flex justify-content-center align-items-center">
+            <h2>afficher les employe</h2>
+            <a class="btn btn-outline-light" href="./pages/GestionEmployer.php">Enclos</a>
+        </div>
+    </section>
+
+    <!-- FIN section pour gerer les employée -->
+
 
 
     <!-- DEBUT include la Footer -->

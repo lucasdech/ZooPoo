@@ -13,7 +13,7 @@
         public function addAnimals(Animaux $animal)
         {
             $prepareSQL = $this->connexion->prepare(
-                "INSERT INTO animaux(name, espece, faim, fatigue, taille, poids, malade) VALUE (?,?,?,?,?,?,?)"
+                "INSERT INTO animaux(name, espece, faim, fatigue, taille, poids, malade, enclos) VALUE (?,?,?,?,?,?,?,?)"
             );
             $prepareSQL->execute([
                 $animal->getName(),
@@ -22,9 +22,9 @@
                 $animal->getFatigue(),
                 $animal->getTaille(),
                 $animal->getPoids(),
-                $animal->getMalade()
+                $animal->getMalade(),
+                $animal->getEnclosId()
             ]);
-
         }
 
         public function loadAll()
@@ -62,4 +62,23 @@
 
             return $AnimalArray;
          }
+
+         public function AnimalByEnclos($enclosId)
+         {
+            $prepareSQL = $this->connexion->prepare("SELECT * FROM `animaux`WHERE enclos = ?");
+            $prepareSQL->execute([
+                $enclosId
+            ]);
+            $listAnimaux = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
+
+            $AnimalArray = [];
+
+            foreach ($listAnimaux as $key) {
+                $animaux = new Animaux($key);
+                array_push($AnimalArray, $animaux);
+            }
+
+            return $AnimalArray;
+            
+        }
     }
