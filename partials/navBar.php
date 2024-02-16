@@ -33,7 +33,7 @@
               <a class="nav-link" href="../pages/GestionAnimaux.php">les Animaux</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">les employés</a>
+              <a class="nav-link" href="../pages/GestionEmployer.php">les employés</a>
             </li>
           </ul>
           

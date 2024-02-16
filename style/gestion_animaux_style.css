@@ -10,13 +10,14 @@
     width: 75%;
 }
 
-#select_animaux {
 
-   
-}
 
 #afficher_animaux {
 
     height: 500px;
 }
 
+.test {
+
+    overflow-y: scroll;
+}

@@ -111,7 +111,7 @@ $enclos = $LoadEnclos->getAll();
     
     <!-- sectionpour afficher la liste choisie avec le select -->
 
-    <section id="afficher_animaux" class="d-flex justify-content-center align-items-center flex-column">
+    <section id="afficher_animaux" class="d-flex justify-content-center align-items-center flex-column container">
         <div class="row">
             <h2>liste des animaux</h2>
         </div>

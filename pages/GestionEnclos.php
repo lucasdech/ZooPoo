@@ -84,7 +84,7 @@ var_dump($compter);
          </div>
  
      </section>
-     
+    
      <!-- sectionpour afficher la liste choisie avec le select -->
  
      <section id="afficher_animaux" class="d-flex justify-content-center align-items-center flex-column">
@@ -94,16 +94,18 @@ var_dump($compter);
          <div class="row">
              <?php foreach ($Enclos as $key) { ?>
                  
-                 <div class="photoEnclos col-4" style="background-image: url(../images/<?=$key->getType()?>.jpeg);">
+                 <div class="photoEnclos text-center col-4" style="background-image: url(../images/<?=$key->getType()?>.jpeg);">
+                    <div class="infoEnclos">
                      <div class="EnclotName">
-                         <?=$key->getName()?>
+                        <h2><?=$key->getName()?></h2>
                      </div>
                      <ul>
-                         <li class="texte-light fs-2"><?=$key->getType()?></li>
-                         <li class="texte-light fs-2"><?=$key->getNbrAnimal() . " animaux a l'interieur"?></li>
-                         <li class="texte-light fs-2"><?=$key->getIsClean() . " propre"?></li>
+                         <li class="texte-light fs-3"><?=$key->getType()?></li>
+                         <li class="texte-light fs-3"><?=$key->getNbrAnimal() . " animaux a l'interieur"?></li>
+                         <li class="texte-light fs-3"><?=$key->getIsClean() . " propre"?></li>
                      </ul>
                      <a class="btn btn-danger" href="./detialEnclos.php?idEnclos=<?=$key->getId()?>">Voir en detail</a>
+                    </div>
                  </div>
                  
              <?php }?>
