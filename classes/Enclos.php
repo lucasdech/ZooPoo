@@ -102,7 +102,7 @@ class Enclos {
     public function addAnimal(Animaux $animal)
     {
         array_push($this->animalArray, $animal);
-        $this->nbrAnimal++;
+       
     }
 
     public function countAnimals()

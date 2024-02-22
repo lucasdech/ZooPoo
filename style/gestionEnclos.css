@@ -1,13 +1,17 @@
 .photoEnclos {
 
-    height: 300px;
+    height: 400px;
     background-size: cover;
     color: white;
-    filter: invert(100%);
+    margin: 20px;
 }
+.test {
 
+    overflow-y: scroll;
+    height: 750px;
+}
 .infoEnclos {
-
-    width: 50%;
-    filter: blur(-3px);
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 90%;
+    width: 60%;
 }

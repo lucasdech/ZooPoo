@@ -16,8 +16,8 @@ if ($choice) {
 
 $enclos = $LoadEnclos->getAll();
 
-// test 
 
+// test 
 
 // $animauxidenclos = $Newanimal->AnimalByEnclos($choice);
 
@@ -119,27 +119,23 @@ $enclos = $LoadEnclos->getAll();
             <?php foreach ($animals as $key) { ?>
                 
                 <div class="card m-3" style="width: 18rem;">
-                    <div class="card-header">
-                        <?=$key->getName()?>
+                    <div class="card-header bg bg-warning">
+                       <p> Nom : <?=$key->getName()?></p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><?=$key->getEspece()?></li>
                         <li class="list-group-item"><?=$key->getTaille() . " cm"?></li>
                         <li class="list-group-item"><?=$key->getPoids() . " Kg"?></li>
-                        <li class="list-group-item"><?=$key->getFaim() . " faim"?></li>
-                        <li class="list-group-item"><?=$key->getMalade() . " malade"?></li>
-                        <li class="list-group-item"><?=$key->getFatigue() . " fatigué"?></li>
-                        <li class="list-group-item"><?=$key->getEspece()?></li>
                         <li class="list-group-item"><?="Enclos n° " . $key->getEnclosId()?></li>
                     </ul>
-                </div>
-                
+                </div>  
             <?php }?>
         </div>
 
     </section>
 <!-- FIN afficher les animaux existant -->
   
+
 
 <!-- DEBUT include la Footer -->
     

@@ -61,6 +61,7 @@ class Employer {
         return $this->forme;
     }
 
+    
     // setter 
 
     public function setId($id)
@@ -83,7 +84,7 @@ class Employer {
         $this->sexe = $sexe;
     }
 
-    public function setGolg($gold)
+    public function setGold($gold)
     {
         $this->gold = $gold;
     }

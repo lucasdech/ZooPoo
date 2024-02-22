@@ -19,25 +19,62 @@
 
     background-color: #6aa74a;
     width: 30%;
-    height: 50%;
+    height: 40%;
+    border-radius: 40px;
+    transition: 0.5s;
+    box-shadow: 10px 5px 5px #bf6938;
+}
+
+#allAnimal:hover {
+    
+    transition: 0.5s;
+    transform: scale(1.1);
+    
 }
 
 #allEnclos {
 
     background-color: #6aa74a;
     width: 30%;
-    height: 50%;
+    height: 40%;
+    border-radius: 40px;
+    box-shadow: 10px 5px 5px #bf6938;
+    transition: 0.5s;
 }
 
+#allEnclos:hover {
+
+    transition: 0.5s;
+    transform: scale(1.1);
+    
+}
 
 .employe{
 
     color: white;
     height: 150px;
     width: 50%;
-    background-color: #BF693B;
+    background-color: #6aa74a;
+    border-radius: 40px;
+    box-shadow: 10px 5px 5px #bf6938;
+    margin-top: -100px;
+    transition: 0.5s;
 }
 
+.employe:hover {
+
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.titre {
+
+    font-size: 120px;
+    background-image: url("../images/fondZebre.png");
+                    background-repeat: repeat;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+}
 
 /* FIN PARTIE INDEX  */
 

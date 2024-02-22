@@ -65,7 +65,7 @@
 
          public function AnimalByEnclos($enclosId)
          {
-            $prepareSQL = $this->connexion->prepare("SELECT * FROM `animaux`WHERE enclos = ?");
+            $prepareSQL = $this->connexion->prepare("SELECT * FROM animaux WHERE enclos = ?");
             $prepareSQL->execute([
                 $enclosId
             ]);
@@ -81,4 +81,49 @@
             return $AnimalArray;
             
         }
+
+        public function AnimalById($id)
+        {
+            $prepareSQL = $this->connexion->prepare("SELECT * FROM animaux WHERE id = ?");
+            $prepareSQL->execute([
+                $id
+            ]);
+            $AnimalArray = $prepareSQL->fetch(PDO::FETCH_ASSOC);
+            
+            $animal = new Animaux($AnimalArray);
+        
+            return $animal;
+        }
+
+        public function FaimRand(Animaux $animaux)
+        {
+            
+                $rand  = rand(0, 2);
+                $prepareSQL = $this->connexion->prepare("UPDATE animaux SET faim = ? WHERE id = ?");
+                $prepareSQL->execute([
+                    $rand,
+                    $animaux->getId()
+                ]);
+        }
+
+        public function Nourir(Animaux $animaux)
+        { 
+            $faim = $animaux->getFaim();
+            $nourir = $faim - 1;
+            
+            $prepareSQL = $this->connexion->prepare("UPDATE animaux SET faim = ? WHERE id = ?");
+            $prepareSQL->execute([
+                $nourir,
+                $animaux->getId()
+            ]);
+        }
+
+        public function DeleteAnimals(Animaux $animal)
+        {
+            $prepareSQL = $this->connexion->prepare("DELETE FROM animaux WHERE id = ?");
+            $prepareSQL->execute([
+                $animal->getId()
+            ]);
+        }
+
     }

@@ -26,7 +26,13 @@
 
         public function getAll()
         {
-           $prepareSQL = $this->connexion->prepare("SELECT * FROM enclos");
+           $prepareSQL = $this->connexion->prepare(
+            "SELECT enclos.id, enclos.name, enclos.isclean, enclos.type, COUNT(animaux.id) as nbr_animal 
+                FROM enclos 
+            LEFT JOIN animaux 
+                ON animaux.enclos = enclos.id 
+            GROUP BY enclos.id;"
+            );
            $prepareSQL->execute();
 
            $listEnclos = $prepareSQL->fetchAll(PDO::FETCH_ASSOC);
@@ -73,7 +79,15 @@
 
         public function update(Enclos $enclos)
         {
-            $prepareSQL = $this->connexion->prepare("UPDATE enclos SET name= ?, isclean= ?, type= ?, nbr_animal= ? WHERE id= ?");
+            $prepareSQL = $this->connexion->prepare(
+                "UPDATE enclos 
+                SET 
+                    name= ?, 
+                    isclean= ?, 
+                    type= ?, 
+                    nbr_animal = ?
+                WHERE enclos.id= ?"
+            );
             $prepareSQL->execute([
                 $enclos->getName(),
                 $enclos->getIsClean(),
@@ -83,5 +97,23 @@
 
             ]);
         }
-            
+        
+        public function IscleanRand(Enclos $enclos)
+        {
+            $rand  = rand(0, 10);
+            $prepareSQL = $this->connexion->prepare("UPDATE enclos SET isclean = ? WHERE id = ?");
+            $prepareSQL->execute([
+                $rand,
+                $enclos->getId()
+            ]);
+        }
+
+        public function CleanEnclos($id)
+        {
+            $prepareSQL = $this->connexion->prepare("UPDATE enclos SET isclean = ? WHERE id = ?");
+            $prepareSQL->execute([
+                0,
+                $id
+            ]);
+        }
 }
